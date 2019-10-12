@@ -6,18 +6,19 @@ if [ `whoami` != root ]; then
     exit
 fi
 
-echo -e -n " Which step are you on?\n\r "
+echo -e -n " Which step are you on?\n\r"
 echo -e -n " 1 - Update Kernel*\n\r"
 echo -e -n " 2 - Mount, Install Required Packages, and Install VBox Additions\n\r"
 echo -e -n " Select step 1 or 2: "
 read answer
-echo "$answer"
 
 while true
 do
 	case $answer in
-	1) dnf update kernel*
-		echo -e -n " OS needs to reboot"
+	1)
+		echo -e -n "\r\ndnf update kernel*"
+		dnf update kernel*
+		echo -e -n "\r\nOS needs to reboot"
 		read -p "Press enter to reboot"
 		reboot
 		break;;
