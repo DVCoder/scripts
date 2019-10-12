@@ -16,19 +16,20 @@ while true
 do
 	case $answer in
 	1)	echo -e -n " Updating kernel* \r\n"
-		dnf update kernel*
-		read -p"\r\nOS needs to reboot \r\n Press ENTER to reboot ...."
+		dnf update kernel* -y
+		ech
+		read -p "CentOS needs to reboot. Press ENTER to reboot ...."
 		reboot
 		break;;
 	2) 
-		read -p "On VirtualBox click Devices > Install Guest Additions \r\n Press ENTER when you have completed ..."
+		read -p "On VirtualBox click Devices > Install Guest Additions. Press ENTER when you have completed ..."
 	   	# Mount 
 		mkdir /media/VirtualBoxGuestAdditions
 		mount -r /dev/cdrom /media/VirtualBoxGuestAdditions
 		## CentOS 8 and Red Hat (RHEL) 8 ##
-		dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+		dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm -y
 		## CentOS/RHEL 8/7/6/5 ##
-		yum install gcc kernel-devel kernel-headers dkms make bzip2 perl
+		yum install gcc kernel-devel kernel-headers dkms make bzip2 perl -y
 		## Current running kernel on Fedora 30/29/28/27/26/25/24/23, CentOS 8/7/6 and Red Hat (RHEL) 8/7/6 ##
 		KERN_DIR=/usr/src/kernels/`uname -r`
 		export KERN_DIR
