@@ -37,5 +37,6 @@ do
 		./VBoxLinuxAdditions.run
 		read -p "Installation completed !!! Press enter to reboot"
 		reboot
-	break;;
+		break;;
+	esac
 done
