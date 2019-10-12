@@ -1,7 +1,6 @@
 # Script was derived from information provided by https://www.if-not-true-then-false.com/2010/install-virtualbox-guest-additions-on-fedora-centos-red-hat-rhel/
 #!/usr/bin/sh
 set -e 
-set -x
 if [ `whoami` != root ]; then
     echo Please run this script as root or using sudo
     exit
@@ -16,7 +15,7 @@ read answer
 while true
 do
 	case $answer in
-	1)
+	1)	echo -e -n " Updating kernel* \r\n"
 		dnf update kernel*
 		read -p"\r\nOS needs to reboot \r\n Press ENTER to reboot ...."
 		reboot
