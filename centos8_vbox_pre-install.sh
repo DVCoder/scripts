@@ -1,6 +1,7 @@
 # Script was derived from information provided by https://www.if-not-true-then-false.com/2010/install-virtualbox-guest-additions-on-fedora-centos-red-hat-rhel/
 #!/usr/bin/sh
-
+set -e 
+set -x
 if [ `whoami` != root ]; then
     echo Please run this script as root or using sudo
     exit
@@ -16,15 +17,13 @@ while true
 do
 	case $answer in
 	1)
-		echo -e -n "\r\ndnf update kernel*"
 		dnf update kernel*
-		echo -e -n "\r\nOS needs to reboot"
-		read -p "Press enter to reboot"
+		read -p"\r\nOS needs to reboot \r\n Press ENTER to reboot ...."
 		reboot
 		break;;
-	2) echo -e -n "On VirtualBox click Devices > Install Guest Additions"
-	   read -p "Press enter when you have completed"
-	   # Mount 
+	2) 
+		read -p "On VirtualBox click Devices > Install Guest Additions \r\n Press ENTER when you have completed ..."
+	   	# Mount 
 		mkdir /media/VirtualBoxGuestAdditions
 		mount -r /dev/cdrom /media/VirtualBoxGuestAdditions
 		## CentOS 8 and Red Hat (RHEL) 8 ##
