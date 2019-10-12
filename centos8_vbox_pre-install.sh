@@ -6,9 +6,10 @@ if [ `whoami` != root ]; then
     exit
 fi
 
-echo -e -n " Choose a step : "
-echo -e -n " 1 - Update Kernel*"
-echo -e -n " 2 - Mount, Install Required Packages, and Install VBox Additions"
+echo -e -n " Which step are you on?\n\r "
+echo -e -n " 1 - Update Kernel*\n\r"
+echo -e -n " 2 - Mount, Install Required Packages, and Install VBox Additions\n\r"
+echo -e -n " Select step 1 or 2: "
 read answer
 echo "$answer"
 
