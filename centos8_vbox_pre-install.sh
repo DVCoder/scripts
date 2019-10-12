@@ -17,7 +17,6 @@ do
 	case $answer in
 	1)	echo -e -n " Updating kernel* \r\n"
 		dnf update kernel* -y
-		ech
 		read -p "CentOS needs to reboot. Press ENTER to reboot ...."
 		reboot
 		break;;
@@ -36,7 +35,7 @@ do
 		cd /media/VirtualBoxGuestAdditions
 		# Then run following command
 		./VBoxLinuxAdditions.run
-		read -p "Installation completed !!! Press enter to reboot"
+		read -p "Installation completed !!! Press enter to reboot .... "
 		reboot
 		break;;
 	esac
