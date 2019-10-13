@@ -6,7 +6,7 @@ if [ `whoami` != root ]; then
     exit
 fi
 
-echo -e -n " Which step are you on?\n\r"
+echo -e -n " Which step are you on? (***OS will reboot automatically after each step***)\n\r"
 echo -e -n " 1 - Update Kernel*\n\r"
 echo -e -n " 2 - Mount, Install Required Packages, and Install VBox Additions\n\r"
 echo -e -n " Select step 1 or 2: "
@@ -17,7 +17,6 @@ do
 	case $answer in
 	1)	echo -e -n " Updating kernel* \r\n"
 		dnf update kernel* -y
-		read -p "CentOS needs to reboot. Press ENTER to reboot ...."
 		reboot
 		break;;
 	2) 
@@ -35,7 +34,6 @@ do
 		cd /media/VirtualBoxGuestAdditions
 		# Then run following command
 		./VBoxLinuxAdditions.run
-		read -p "Installation completed !!! Press enter to reboot .... "
 		reboot
 		break;;
 	esac
