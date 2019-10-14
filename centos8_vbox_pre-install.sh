@@ -20,7 +20,7 @@ do
 		reboot
 		break;;
 	2) 
-		read -p "On VirtualBox click Devices > Install Guest Additions. Press ENTER when you have completed ..."
+		read -p "On VirtualBox click Devices > Insert Guest Additions CD Image. Press ENTER when you have completed ..."
 	   	# Mount 
 		mkdir /media/VirtualBoxGuestAdditions
 		mount -r /dev/cdrom /media/VirtualBoxGuestAdditions
